@@ -1,8 +1,8 @@
 package by.academy.classwork.lesson1;
 
 public class Cat {
-    public int age = 10;
-    public String nickName = "Ярик";
+    private int age = 10;
+    private String nickName = "Ярик";
     private int money;
     private char initials;
     private boolean isHomeAnimal;
@@ -52,6 +52,14 @@ public class Cat {
 
     public boolean getIsHomeAnimal() {
         return isHomeAnimal;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
     }
 
 }

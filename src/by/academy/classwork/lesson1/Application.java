@@ -10,6 +10,6 @@ public class Application {
         ordinaryCat.grow();
         ordinaryCat.grow();
         ordinaryCat.grow();
-        System.out.println(ordinaryCat.age);
+        System.out.println(ordinaryCat.getAge());
     }
 }
