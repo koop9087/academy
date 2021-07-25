@@ -1,3 +1,33 @@
 
 ;
 academy.iml,d\9\d923b60848b14e0c2c8e919d5b6a963583f67604
+Y
+)src/by/academy/classwork/lesson1/Cat.java,5\5\5589330e9207428fb3058cdebb42e2dffaeb3527
+a
+1src/by/academy/classwork/lesson1/Application.java,7\6\769dcc86e91ed4da2759b572f44aaa4a06c651dc
+T
+$src/by/academy/homework1/Animal.java,b\0\b01050f66c48d1d7b1c981a72eaa2b9588465bf3
+X
+(src/by/academy/homework1/AnimalDemo.java,9\3\93d202364e438370c28acd45f8c5e57d9834ab36
+V
+&src/by/academy/homework2/DataType.java,7\d\7d27d4d6cbbd67937c892b21a4186148d1c90754
+T
+$src/by/academy/homework3_1/Main.java,a\7\a7257daa77eee066a2ebd9356f33b7aa6da2ba55
+`
+0src/by/academy/homework2/MultiplicatorTable.java,9\0\906a8cbf42fa0bf2e6c049a1ce9943135377711b
+X
+(src/by/academy/homework2/SaleInShop.java,9\2\92fdee1c830f93c3aa70e3260d76b1b2b19810a3
+V
+&src/by/academy/homework3/Solution.java,b\6\b65bdeb0d7fe1b9de8ad5e20ec0b220c6175e3c5
+U
+%src/by/academy/homework3_1/Task1.java,b\c\bc97f4fb9df1f0e7fdfe26b5cf3176a41578d545
+U
+%src/by/academy/homework3_1/Task2.java,e\d\edcb994aa33f65f4ba4beb3479fa1dad783ff68f
+U
+%src/by/academy/homework3_1/Task3.java,e\a\ea0ef6e5a41964f8575cb6a1791e150d5b6cfacd
+U
+%src/by/academy/homework3_1/Task4.java,f\f\fff0ff9772948a306a46c60412764ee07ce607bb
+T
+$src/by/academy/homework2/TwoSqr.java,2\d\2dc6cf6be10ccac29e10974f5d72d8e91e5826a2
+R
+"src/by/academy/homework2/Main.java,8\a\8a5aea3bc2f377dd65be0d02a1a21431f632b823
