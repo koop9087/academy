@@ -7,6 +7,18 @@ public class Task4 {
     public static final Scanner scanner = new Scanner(System.in);
     public static final Random random = new Random();
     public static final int COUNT_OF_CARDS = 52;
+    public static final int[] DEFAULT_DECK;
+    public static int[] deck = new int[COUNT_OF_CARDS];
+
+    static {
+        DEFAULT_DECK = new int[COUNT_OF_CARDS];
+        for (int i = 0, index = 0; i < 4; i++) {
+            for (int j = 2; j < 15; j++) {
+                DEFAULT_DECK[index] = j;
+                index++;
+            }
+        }
+    }
 
     public static int countOfPlayers() {
         int countOfPlayer = scanner.nextInt();
@@ -14,28 +26,21 @@ public class Task4 {
         return countOfPlayer;
     }
 
-    public static int[] fillTheArrayOfCards() {
-        int countOfCards = 52;
-        int[] array = new int[5];
-        for (int i = 0; i < array.length; i++) {
-            array[i] = random.nextInt(countOfCards);
-        }
-        return array;
+    public static void startMatch(){
+        System.arraycopy(DEFAULT_DECK,0,deck,0,COUNT_OF_CARDS);
     }
 
-    public static void sortTheArray(int[] array) {
-        for (int i = 0; i < array.length; i++) {
-            int min = array[i];
-            int minId = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[j] < min) {
-                    min = array[j];
-                    minId = j;
-                }
+    protected static int[] issuesWithCards(){
+        int[] array = new int[5];
+        for(int i = 0; i < 5; i++){
+            int index = random.nextInt(COUNT_OF_CARDS);
+            if(deck[index] == 0){
+                i--;
+                continue;
             }
-            int temp = array[i];
-            array[i] = min;
-            array[minId] = temp;
+            array[i] = deck[index];
+            deck[index] = 0;
         }
+        return array;
     }
 }

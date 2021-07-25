@@ -7,9 +7,10 @@ public class Aspirant extends Student {
     public Aspirant(String firstName, String lastName, String group, double averageMark) {
         super(firstName, lastName, group, averageMark);
     }
+
     @Override
     public double getScholarship() {
-        if(getaverageMark() == MAX_AVARAGE_MARK) {
+        if (getaverageMark() == MAX_AVARAGE_MARK) {
             return FIRST_STEPENDY_SUM;
         } else {
             return SECOND_STEPENDY_SUM;

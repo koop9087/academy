@@ -22,11 +22,11 @@ public abstract class Product {
     protected abstract double discount();
 
 
-    public String getType() {
+    public String getName() {
         return name;
     }
 
-    public void setType(String type) {
+    public void setName(String type) {
         this.name = type;
     }
 
@@ -68,10 +68,11 @@ public abstract class Product {
 
     @Override
     public String toString() {
-        return "lesson5.deal.Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+        final StringBuilder sb = new StringBuilder("Product{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", quantity=").append(quantity);
+        sb.append('}');
+        return sb.toString();
     }
 }

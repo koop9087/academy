@@ -12,13 +12,10 @@ public class Burger extends Product {
         this.price = price;
         this.quantity = quantity;
     }
-
-    @Override
     public String getType() {
         return type;
     }
 
-    @Override
     public void setType(String type) {
         this.type = type;
     }
@@ -32,9 +29,9 @@ public class Burger extends Product {
     }
 
     @Override
-    public double discount(){
+    public double discount() {
         double result = 0;
-        if(weight > 1) {
+        if (weight > 1) {
             result = 0.20;
         }
         return result;
@@ -64,9 +61,10 @@ public class Burger extends Product {
 
     @Override
     public String toString() {
-        return "Burger{" +
-                "type='" + type + '\'' +
-                ", weight=" + weight +
-                '}';
+        final StringBuilder sb = new StringBuilder("Burger{");
+        sb.append("type='").append(type).append('\'');
+        sb.append(", weight=").append(weight);
+        sb.append('}');
+        return sb.toString();
     }
 }

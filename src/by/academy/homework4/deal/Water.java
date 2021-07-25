@@ -14,12 +14,10 @@ public class Water extends Product{
         this.weight = weight;
     }
 
-    @Override
     public String getType() {
         return type;
     }
 
-    @Override
     public void setType(String type) {
         this.type = type;
     }
