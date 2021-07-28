@@ -5,22 +5,21 @@ public abstract class Product {
     protected double price;
     protected int quantity;
 
-    public Product() {
+    protected Product() {
         super();
     }
 
-    public Product(String name, double price, int quantity) {
+    protected Product(String name, double price, int quantity) {
         this.name = name;
         this.price = price;
         this.quantity = quantity;
     }
 
     public double calcPrice() {
-        return (1 - discount() * price * quantity);
+        return ((1 - discount()) * price * quantity);
     }
 
     protected abstract double discount();
-
 
     public String getName() {
         return name;

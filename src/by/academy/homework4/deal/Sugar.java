@@ -4,6 +4,12 @@ public class Sugar extends Product {
     private String type;
     private double weight;
 
+    public Sugar(double price, int quantity, String name){
+        this.price = price;
+        this.quantity = quantity;
+        this.name = name;
+    }
+
     public Sugar(String type, double weight, String name, double price, int quantity) {
         super();
         this.type = type;
@@ -13,12 +19,10 @@ public class Sugar extends Product {
         this.quantity = quantity;
     }
 
-    @Override
     public String getType() {
         return type;
     }
 
-    @Override
     public void setType(String type) {
         this.type = type;
     }
@@ -64,9 +68,11 @@ public class Sugar extends Product {
 
     @Override
     public String toString() {
-        return "Sugar{" +
-                "type='" + type + '\'' +
-                ", weight=" + weight +
-                '}';
+        final StringBuilder sb = new StringBuilder("Sugar{");
+        sb.append("name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", quantity=").append(quantity);
+        sb.append('}');
+        return sb.toString();
     }
 }

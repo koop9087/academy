@@ -4,6 +4,11 @@ public class Burger extends Product {
     private String type;
     private double weight;
 
+    public Burger(double price, int quantity, String name){
+        this.price = price;
+        this.quantity = quantity;
+        this.name = name;
+    }
     public Burger(String type, double weight, String name, double price, int quantity) {
         super();
         this.type = type;
@@ -31,7 +36,7 @@ public class Burger extends Product {
     @Override
     public double discount() {
         double result = 0;
-        if (weight > 1) {
+        if (weight > 100) {
             result = 0.20;
         }
         return result;
@@ -62,8 +67,9 @@ public class Burger extends Product {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Burger{");
-        sb.append("type='").append(type).append('\'');
-        sb.append(", weight=").append(weight);
+        sb.append("name='").append(name).append('\'');
+        sb.append(", price=").append(price);
+        sb.append(", quantity=").append(quantity);
         sb.append('}');
         return sb.toString();
     }

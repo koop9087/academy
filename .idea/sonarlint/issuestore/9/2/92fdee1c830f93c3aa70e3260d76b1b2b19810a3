@@ -1,0 +1,16 @@
+
+T
+java:S2589"7Remove this expression which always evaluates to "true"(ñ¿’8½ĞÈ¬«/
+Y
+java:S2589"7Remove this expression which always evaluates to "true"(Æ¹¥ıÿÿÿÿ8½ĞÈ¬«/
+Y
+java:S2589#"7Remove this expression which always evaluates to "true"(˜ŞÅÒúÿÿÿÿ8¾ĞÈ¬«/
+T
+java:S2589%"7Remove this expression which always evaluates to "true"(¾ÃæÅ8ÀĞÈ¬«/
+W
+java:S1118":Add a private constructor to hide the implicit public one.(×·Íƒ8ÁĞÈ¬«/
+L
+java:S6212"/Declare this local variable with "var" instead.(óŞ²‹8ÊĞÈ¬«/
+L
+java:S6212"/Declare this local variable with "var" instead.(°úÍÖ8ËĞÈ¬«/
+U	java:S106("9Replace this use of System.out or System.err by a logger.(ï¨æ§8ÍĞÈ¬«/

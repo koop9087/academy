@@ -4,8 +4,10 @@ public class Water extends Product{
     private String type;
     private double weight;
 
-    public Water() {
-        super();
+    public Water(double price, int quantity, String name){
+        this.price = price;
+        this.quantity = quantity;
+        this.name = name;
     }
 
     public Water(String name, double price, int quantity, String type, double weight) {
@@ -29,6 +31,7 @@ public class Water extends Product{
     public void setWeight(double weight) {
         this.weight = weight;
     }
+
     @Override
     public double discount(){
         double result = 0;
@@ -66,8 +69,6 @@ public class Water extends Product{
         sb.append("name='").append(name).append('\'');
         sb.append(", price=").append(price);
         sb.append(", quantity=").append(quantity);
-        sb.append(", type='").append(type).append('\'');
-        sb.append(", weight=").append(weight);
         sb.append('}');
         return sb.toString();
     }
