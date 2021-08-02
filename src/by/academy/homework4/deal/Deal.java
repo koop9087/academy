@@ -5,6 +5,16 @@ import java.util.*;
 public class Deal {
     public static final Calendar CALENDAR = Calendar.getInstance();
     public static final Scanner SCANNER = new Scanner(System.in);
+    public static final String TYPE_NACHOSBURGER = "NA4OSBURGER";
+    public static final String TYPE_SUGAR_PRO = "САХАР-ПРО";
+    public static final String TYPE_SODA_WATER = "Газированная";
+    public static final String MENU_MESSAGE = "Введите цифру 1 для удаления продукта, 2 для добавления, остальные цифры для выхода из меню";
+    public static final String BURGER = "Burger";
+    public static final String WATER = "Water";
+    public static final String SUGAR = "Sugar";
+    public static final String ALLOWED_PRODUCTS_MESSAGE = "Введите тип нового продукта. Доступные сейчас Burger Sugar Water";
+    public static final String INPUT_PRICE_QUANTITY_MESSAGE = "Введите цену, количество";
+    private int actualSize;
     private Product[] products;
     private User seller;
     private User buyer;
@@ -12,6 +22,7 @@ public class Deal {
     private Date deadLineDate;
 
     public Deal(Product[] products, User user, User buyer, Date dealDate, Date deadLineDate) {
+        this.actualSize = products.length;
         this.products = products;
         this.seller = user;
         this.buyer = buyer;
@@ -26,75 +37,88 @@ public class Deal {
     public double calcFullPrice() {
         double fullPrice = 0;
         if (products != null) {
-            for (Product p : products) {
-                fullPrice += p.calcPrice();
+            for (int i = 0; i < actualSize; i++) {
+                fullPrice += products[i].calcPrice();
             }
         }
         return fullPrice;
     }
 
-    public void menu(List<Product> list) {                                        //task6
-        int count = 0;
-        while (count < products.length) {
-            System.out.println("Введите цифру 1 для удаления продукта, 2 для добавления, 3 для выхода с меню");
+    public void menu() {                                                //task6
+        while (true) {
+            System.out.println(MENU_MESSAGE);
             switch (SCANNER.nextLine()) {
                 case "1":
                     switch (SCANNER.nextLine()) {
-                        case "NA4OSBURGER":
-                            for (int i = 0; i < list.size(); i++) {
-                                if (list.get(i).getName().equals("NA4OSBURGER")) {
-                                    list.remove(i);
-                                    break;
-                                }
-                            }
+                        case TYPE_NACHOSBURGER:
+                            deleteElement(TYPE_NACHOSBURGER);
                             break;
-                        case "САХАР-ПРО":
-                            for (int i = 0; i < list.size(); i++) {
-                                if (list.get(i).getName().equals("САХАР-ПРО")) {
-                                    list.remove(i);
-                                    break;
-                                }
-                            }
+                        case TYPE_SUGAR_PRO:
+                            deleteElement(TYPE_SUGAR_PRO);
                             break;
-                        case "Газированная":
-                            for (int i = 0; i < list.size(); i++) {
-                                if (list.get(i).getName().equals("Газированная")) {
-                                    list.remove(i);
-                                    break;
-                                }
-                            }
+                        case TYPE_SODA_WATER:
+                            deleteElement(TYPE_SODA_WATER);
                             break;
                     }
                     break;
 
                 case "2":
-                    System.out.println("Введите тип нового продукта. Доступные сейчас Burger Sugar Water");
+                    System.out.println(ALLOWED_PRODUCTS_MESSAGE);
                     switch (SCANNER.nextLine()) {
-                        case "Burger":
-                            System.out.println("Сейчас в магазине проблемы, поэтому название будет соответствовать тому, что вы ввели ранее");
-                            System.out.println("___________________________________________");
-                            System.out.println("Введите цену, количество");
-                            list.add(count, new Burger(SCANNER.nextDouble(), SCANNER.nextInt(), "Burger"));
-                            count++;
-                            break;
-                        case "Water":
-                            list.add(count, new Water(SCANNER.nextDouble(), SCANNER.nextInt(), "Water"));
-                            count++;
+                        case BURGER:
+                            System.out.println(INPUT_PRICE_QUANTITY_MESSAGE);
+                            addElement(new Burger(SCANNER.nextDouble(), SCANNER.nextInt(), BURGER));
                             calcFullPrice();
+                            SCANNER.nextLine();
                             break;
-                        case "Sugar":
-                            list.add(count, new Sugar(SCANNER.nextDouble(), SCANNER.nextInt(), "Sugar"));
-                            count++;
+                        case WATER:
+                            addElement(new Water(SCANNER.nextDouble(), SCANNER.nextInt(), WATER));
+                            calcFullPrice();
+                            SCANNER.nextLine();
+                            break;
+                        case SUGAR:
+                            addElement(new Sugar(SCANNER.nextDouble(), SCANNER.nextInt(), SUGAR));
+                            calcFullPrice();
+                            SCANNER.nextLine();
                             break;
                     }
                     break;
-                case "3":
-                    return;
                 default:
+                    return;
 
             }
         }
     }
+
+    public void addElement(Product product) {
+        if (actualSize >= products.length) {
+            products = Arrays.copyOf(products, products.length + 1);
+        }
+        products[actualSize] = product;
+        actualSize++;
+    }
+
+    public void deleteElement(String name) {
+        int index = findElementIndexByName(name);
+        if (index == actualSize - 1) {
+            products[index] = null;
+        } else {
+            System.arraycopy(products, index + 1, products, index, actualSize - 1 - index);
+            products[actualSize - 1] = null;
+        }
+        actualSize--;
+    }
+
+    private int findElementIndexByName(String name) {
+        int index = -1;
+        for (int i = 0; i < actualSize; i++) {
+            if (products[i].getName().equals(name)) {
+                index = i;
+            }
+        }
+        return index;
+    }
+
 
     public User getBuyer() {
         return buyer;
@@ -109,6 +133,7 @@ public class Deal {
     }
 
     public void setProducts(Product[] products) {
+        actualSize = products.length;
         this.products = products;
     }
 
@@ -142,14 +167,15 @@ public class Deal {
         this.deadLineDate = deadLineDate;
     }
 
+    public int getActualSize() {
+        return actualSize;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Deal deal = (Deal) o;
-
-        // Probably incorrect - comparing Object[] arrays with Arrays.equals
         if (!Arrays.equals(products, deal.products)) return false;
         if (seller != null ? !seller.equals(deal.seller) : deal.seller != null) return false;
         if (buyer != null ? !buyer.equals(deal.buyer) : deal.buyer != null) return false;

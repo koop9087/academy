@@ -81,9 +81,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         User user = (User) o;
-
         if (Double.compare(user.money, money) != 0) return false;
         if (name != null ? !name.equals(user.name) : user.name != null) return false;
         if (dateOfBirth != null ? !dateOfBirth.equals(user.dateOfBirth) : user.dateOfBirth != null) return false;

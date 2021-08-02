@@ -1,10 +1,10 @@
 package by.academy.homework4.deal;
 
-public class Water extends Product{
+public class Water extends Product {
     private String type;
     private double weight;
 
-    public Water(double price, int quantity, String name){
+    public Water(double price, int quantity, String name) {
         this.price = price;
         this.quantity = quantity;
         this.name = name;
@@ -33,9 +33,9 @@ public class Water extends Product{
     }
 
     @Override
-    public double discount(){
+    public double discount() {
         double result = 0;
-        if(weight > 0.2) {
+        if (weight > 0.2) {
             result = 0.30;
         }
         return result;
@@ -46,9 +46,7 @@ public class Water extends Product{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
-
         Water water = (Water) o;
-
         if (Double.compare(water.weight, weight) != 0) return false;
         return type != null ? type.equals(water.type) : water.type == null;
     }
@@ -69,6 +67,8 @@ public class Water extends Product{
         sb.append("name='").append(name).append('\'');
         sb.append(", price=").append(price);
         sb.append(", quantity=").append(quantity);
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", weight=").append(weight);
         sb.append('}');
         return sb.toString();
     }

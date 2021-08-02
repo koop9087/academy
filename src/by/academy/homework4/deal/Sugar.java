@@ -4,7 +4,7 @@ public class Sugar extends Product {
     private String type;
     private double weight;
 
-    public Sugar(double price, int quantity, String name){
+    public Sugar(double price, int quantity, String name) {
         this.price = price;
         this.quantity = quantity;
         this.name = name;
@@ -72,6 +72,8 @@ public class Sugar extends Product {
         sb.append("name='").append(name).append('\'');
         sb.append(", price=").append(price);
         sb.append(", quantity=").append(quantity);
+        sb.append(", type='").append(type).append('\'');
+        sb.append(", weight=").append(weight);
         sb.append('}');
         return sb.toString();
     }

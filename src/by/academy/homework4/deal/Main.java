@@ -1,10 +1,7 @@
 package by.academy.homework4.deal;
 
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
@@ -36,24 +33,21 @@ public class Main {
         Product[] products = new Product[sizeOfArray];
         products[0] = new Burger("Из БК", 90, "NA4OSBURGER", 100, 1);
         products[1] = new Sugar("Из Евроопта", 1000, "САХАР-ПРО", 800, 3);
-        products[2] = new Water("Газированная", 140, 1, "Из Грина", 7); //classwork
-        List<Product> list = new ArrayList<>(Arrays.asList(products));                               //task6
+        products[2] = new Water("Газированная", 140, 1, "Из Грина", 7);          //classwork
         deal.setBuyer(buyer);
         deal.setSeller(seller);
-        changeOurProducts(deal, products);                                                          //task6
-        deal.menu(list);                                                                           //task6
-        for (Product elms : list) {
+        deal.setProducts(products);
+        deal.menu();
+        for (Product elms : products) {
             System.out.println(elms);
         }
-        sizeOfArray = list.size();
-        Product[] newProducts = new Product[sizeOfArray];
-        list.toArray(newProducts);
-        changeOurProducts(deal, newProducts);
+        products = deal.getProducts();
+        changeOurProducts(deal, products);
         System.out.println(deal.getDeadLineDate());                                                  // task7
         String userDateOfBirthIsValid = Valid.scanLine();                                            //task8
-        User user = new User("Kirill",900, userDateOfBirthIsValid);                    //task8
+        User user = new User("Kirill", 900, userDateOfBirthIsValid);                    //task8
         System.out.println(user.isDateOfBirthIsValid(userDateOfBirthIsValid));                       //task8
-        User lena = new User("Lena",200,"08/10/2001","+375292871211","lena9010@gmail.com"); //task9
+        User lena = new User("Lena", 200, "08/10/2001", "+375292871211", "lena9010@gmail.com"); //task9
         System.out.println(belarusPhoneValidator.validate(lena.getPhone()));
         System.out.println(emailValidator.validate(lena.getEmail()));
 
@@ -62,8 +56,8 @@ public class Main {
     private static void changeOurProducts(Deal deal, Product[] newProducts) {
         deal.setProducts(newProducts);
         System.out.println("Чек :");
-        for (Product p : deal.getProducts()) {
-            System.out.println(p.getName() + " price: " + p.calcPrice());
+        for (int i = 0; i < deal.getActualSize(); i++) {
+            System.out.println(newProducts[i].getName() + " price: " + newProducts[i].calcPrice());
         }
         System.out.println("");
         System.out.println("Full price: " + deal.calcFullPrice());
