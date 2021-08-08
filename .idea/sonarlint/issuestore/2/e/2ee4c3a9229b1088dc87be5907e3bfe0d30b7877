@@ -1,0 +1,27 @@
+
+N	java:S106"9Replace this use of System.out or System.err by a logger.(„¤é¾
+E
+java:S62121"/Declare this local variable with "var" instead.(»”›Ù
+E
+java:S62122"/Declare this local variable with "var" instead.(Ö‹Î”
+E
+java:S6212:"/Declare this local variable with "var" instead.(»”›Ù
+E
+java:S6212;"/Declare this local variable with "var" instead.(Ö‹Î”
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(‘ÀÛ‘
+L
+java:S6212G"/Declare this local variable with "var" instead.(´Ú‰8Œ™…«­/
+E
+java:S6212H"/Declare this local variable with "var" instead.(»”›Ù
+E
+java:S6212I"/Declare this local variable with "var" instead.(Ö‹Î”
+J
+java:S6212["/Declare this local variable with "var" instead.(™ÊŸüÿÿÿÿ
+E
+java:S6212c"/Declare this local variable with "var" instead.(şğ­À
+J
+java:S6212d"/Declare this local variable with "var" instead.(µ‰˜Üøÿÿÿÿ
+@
+java:S2116e"%Use "Arrays.hashCode(array)" instead.(ÿñüƒşÿÿÿÿ
+E
+java:S6212m"/Declare this local variable with "var" instead.(®æê÷
