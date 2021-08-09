@@ -1,5 +1,7 @@
 package by.academy.homework5.task3.logic;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -55,7 +57,7 @@ public class MyArray<T> implements Iterable<T> {
     }
 
     @Override
-    public Iterator<T> iterator() {
+    public @NotNull Iterator<T> iterator() {
         return new Iterator<T>() {
             private int currentIndex = -1;
 
