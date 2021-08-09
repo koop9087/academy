@@ -1,4 +1,4 @@
-package by.academy.homework5.task2;
+package by.academy.homework5.task2.logic;
 
 import java.util.Arrays;
 
@@ -6,12 +6,14 @@ public class ParametryArray<T> {
     private T[] arrayObjects;
     private int sizeOfArray;
 
-    public ParametryArray() {
+    public ParametryArray(T[] arrayObjects) {
+        this.arrayObjects = arrayObjects;
         this.sizeOfArray = 16;
     }
 
-    public ParametryArray(int sizeOfArray) {
+    public ParametryArray(int sizeOfArray, T[] arrayObjects) {
         this.sizeOfArray = sizeOfArray;
+        this.arrayObjects = arrayObjects;
     }
 
     public void addElement(T obj) {

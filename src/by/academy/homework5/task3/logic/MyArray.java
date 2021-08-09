@@ -1,4 +1,4 @@
-package by.academy.homework5.task3;
+package by.academy.homework5.task3.logic;
 
 import java.util.Arrays;
 import java.util.Iterator;

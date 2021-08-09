@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        Task1.sStringEquals(); //task1
+        Task1.sStringEquals(); //Main
 
         String[] line = Task2.enterLine(); //task2
         int[] array = Task2.array(line);

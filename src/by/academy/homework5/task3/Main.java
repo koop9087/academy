@@ -1,5 +1,7 @@
 package by.academy.homework5.task3;
 
+import by.academy.homework5.task3.logic.MyArray;
+
 import java.util.Iterator;
 
 public class Main {
