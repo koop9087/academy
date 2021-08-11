@@ -1,0 +1,20 @@
+
+E
+java:S1121•".Extract the assignment out of this expression.(ÙèàÒ
+E
+java:S1121 ".Extract the assignment out of this expression.(›¯ˆ
+;
+java:S2885"%Make "CALENDAR" an instance variable.(ç¨¡Á
+J
+java:S6212("/Declare this local variable with "var" instead.(Í‹‹ºüÿÿÿÿ
+M	java:S1061"9Replace this use of System.out or System.err by a logger.(³ÂP
+<	java:S1314""Add a default case to this switch.(º”Á£ùÿÿÿÿ
+N	java:S106B"9Replace this use of System.out or System.err by a logger.(éıüï
+<	java:S131C""Add a default case to this switch.(º”Á£ùÿÿÿÿ
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(²Ù–Şúÿÿÿÿ
+J
+java:S6212r"/Declare this local variable with "var" instead.(Í‹‹ºüÿÿÿÿ
+K
+java:S6212²"/Declare this local variable with "var" instead.(ù©Æ¤ÿÿÿÿÿ
+K
+java:S6212Æ"/Declare this local variable with "var" instead.(³åöäûÿÿÿÿ

@@ -1,0 +1,42 @@
+
+C
+java:S1604"(Make this anonymous inner class a lambda(ÅœØúÿÿÿÿ
+E
+java:S6212	"/Declare this local variable with "var" instead.(¢Î‰Ş
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ãº»Çşÿÿÿÿ
+J
+java:S6212"/Declare this local variable with "var" instead.(Š˜Á©úÿÿÿÿ
+E
+java:S6212"/Declare this local variable with "var" instead.(»Ò£
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Û¨ŠÏúÿÿÿÿ
+E
+java:S6212"/Declare this local variable with "var" instead.(¯ğ®˜
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ºß¯û
+g
+java:S5998"LRefactor this repetition that can lead to a stack overflow for large inputs.(åË„ÿùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(öÊí‡
+J
+java:S6212"/Declare this local variable with "var" instead.(ÑÑ¢¹ıÿÿÿÿ
+E
+java:S6212"/Declare this local variable with "var" instead.(Ñ¶Ì¸
+J
+java:S6212"/Declare this local variable with "var" instead.(ª¹ùúÿÿÿÿ
+J
+java:S6212 "/Declare this local variable with "var" instead.(½ñöşÿÿÿÿ
+E
+java:S6212!"/Declare this local variable with "var" instead.(Åâã§
+S	java:S106*"9Replace this use of System.out or System.err by a logger.(Î®¯æøÿÿÿÿ
+S	java:S106."9Replace this use of System.out or System.err by a logger.(Ÿˆü‹üÿÿÿÿ
+E
+java:S62120"/Declare this local variable with "var" instead.(ØÈáÛ
+N	java:S1061"9Replace this use of System.out or System.err by a logger.(•ÅÃ€
+E
+java:S62122"/Declare this local variable with "var" instead.(õ¼§“
+S	java:S1063"9Replace this use of System.out or System.err by a logger.(áÌ·ùÿÿÿÿ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(Ïš‡
+S	java:S106:"9Replace this use of System.out or System.err by a logger.(É‡ğÆùÿÿÿÿ
+J
+java:S6212;"/Declare this local variable with "var" instead.(›·ñôıÿÿÿÿ
+S	java:S106<"9Replace this use of System.out or System.err by a logger.(Ğÿ¾ªùÿÿÿÿ
+S	java:S106>"9Replace this use of System.out or System.err by a logger.(ŞÒ—üÿÿÿÿ
+S	java:S106?"9Replace this use of System.out or System.err by a logger.(²•€Àÿÿÿÿÿ
