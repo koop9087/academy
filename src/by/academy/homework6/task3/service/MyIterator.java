@@ -1,4 +1,4 @@
-package by.academy.homework6.task3.Service;
+package by.academy.homework6.task3.service;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
