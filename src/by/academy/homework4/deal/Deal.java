@@ -5,9 +5,9 @@ import java.util.*;
 public class Deal {
     public static final Calendar CALENDAR = Calendar.getInstance();
     public static final Scanner SCANNER = new Scanner(System.in);
-    public static final String TYPE_NACHOSBURGER = "NA4OSBURGER";
-    public static final String TYPE_SUGAR_PRO = "САХАР-ПРО";
-    public static final String TYPE_SODA_WATER = "Газированная";
+    public static final String TYPE_NACHOSBURGER = "Бургер";
+    public static final String TYPE_SUGAR_PRO = "Сахарок";
+    public static final String TYPE_SODA_WATER = "Водичка";
     public static final String MENU_MESSAGE = "Введите цифру 1 для удаления продукта, 2 для добавления, остальные цифры для выхода из меню";
     public static final String BURGER = "Burger";
     public static final String WATER = "Water";
@@ -15,14 +15,15 @@ public class Deal {
     public static final String ALLOWED_PRODUCTS_MESSAGE = "Введите тип нового продукта. Доступные сейчас Burger Sugar Water";
     public static final String INPUT_PRICE_QUANTITY_MESSAGE = "Введите цену, количество";
     private int actualSize;
-    private Product[] products;
+    private ArrayList<Product> products;
     private User seller;
     private User buyer;
     private Date dealDate;
     private Date deadLineDate;
 
-    public Deal(Product[] products, User user, User buyer, Date dealDate, Date deadLineDate) {
-        this.actualSize = products.length;
+
+    public Deal(ArrayList<Product> products, User user, User buyer, Date dealDate, Date deadLineDate) {
+        this.actualSize = products.size();
         this.products = products;
         this.seller = user;
         this.buyer = buyer;
@@ -37,8 +38,8 @@ public class Deal {
     public double calcFullPrice() {
         double fullPrice = 0;
         if (products != null) {
-            for (int i = 0; i < actualSize; i++) {
-                fullPrice += products[i].calcPrice();
+            for (int i = 0; i < products.size(); i++) {
+                fullPrice += products.get(i).calcPrice();
             }
         }
         return fullPrice;
@@ -91,34 +92,53 @@ public class Deal {
     }
 
     public void addElement(Product product) {
-        if (actualSize >= products.length) {
-            products = Arrays.copyOf(products, products.length + 1);
-        }
-        products[actualSize] = product;
-        actualSize++;
+        products.add(product);
     }
 
     public void deleteElement(String name) {
-        int index = findElementIndexByName(name);
-        if (index == actualSize - 1) {
-            products[index] = null;
-        } else {
-            System.arraycopy(products, index + 1, products, index, actualSize - 1 - index);
-            products[actualSize - 1] = null;
-        }
-        actualSize--;
-    }
-
-    private int findElementIndexByName(String name) {
-        int index = -1;
-        for (int i = 0; i < actualSize; i++) {
-            if (products[i].getName().equals(name)) {
-                index = i;
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getName().equals(name)) {
+                products.remove(i);
             }
         }
-        return index;
     }
 
+    public void printSort() {
+        sort(products);
+        for (Product product : products) {
+            System.out.println(product.getName());
+        }
+    }
+
+    public void sort(ArrayList<Product> products) {             // По убыванию
+        for (int i = 0; i < products.size(); i++) {
+            for (int j = 0; j < products.size(); j++) {
+                if (compareObj(products.get(i), products.get(j)) > 0) {
+                    Product temp = products.get(i);
+                    products.set(i, products.get(j));
+                    products.set(j, temp);
+                }
+            }
+        }
+    }
+
+    @SuppressWarnings("unchecked")
+    private int compareObj(Product firstProduct, Product secondProduct) {
+        Comparator comparator = Comparator.naturalOrder();
+        return comparator.compare(findLetter(firstProduct), findLetter(secondProduct));
+    }
+
+    private int findLetter(Product product) {
+        String rusLetters = "АБВГДЕЁЗЖИЁКЛМНОПРСТУФХЦЧШЩЬЭЪЭЮЯ";
+        String[] str = rusLetters.split("");
+//        char[] chars = rusLetters.toCharArray();
+        for (int i = 0; i < str.length; i++) {
+            if (product.getName().charAt(0) == str[i].charAt(0)) {
+                return i;
+            }
+        }
+        return 0;
+    }
 
     public User getBuyer() {
         return buyer;
@@ -128,12 +148,11 @@ public class Deal {
         this.buyer = buyer;
     }
 
-    public Product[] getProducts() {
+    public ArrayList<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(Product[] products) {
-        actualSize = products.length;
+    public void setProducts(ArrayList<Product> products) {
         this.products = products;
     }
 
@@ -176,7 +195,8 @@ public class Deal {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Deal deal = (Deal) o;
-        if (!Arrays.equals(products, deal.products)) return false;
+        if (actualSize != deal.actualSize) return false;
+        if (products != null ? !products.equals(deal.products) : deal.products != null) return false;
         if (seller != null ? !seller.equals(deal.seller) : deal.seller != null) return false;
         if (buyer != null ? !buyer.equals(deal.buyer) : deal.buyer != null) return false;
         if (dealDate != null ? !dealDate.equals(deal.dealDate) : deal.dealDate != null) return false;
@@ -185,23 +205,12 @@ public class Deal {
 
     @Override
     public int hashCode() {
-        int result = Arrays.hashCode(products);
+        int result = actualSize;
+        result = 31 * result + (products != null ? products.hashCode() : 0);
         result = 31 * result + (seller != null ? seller.hashCode() : 0);
         result = 31 * result + (buyer != null ? buyer.hashCode() : 0);
         result = 31 * result + (dealDate != null ? dealDate.hashCode() : 0);
         result = 31 * result + (deadLineDate != null ? deadLineDate.hashCode() : 0);
         return result;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Deal{");
-        sb.append("products=").append(Arrays.toString(products));
-        sb.append(", seller=").append(seller);
-        sb.append(", buyer=").append(buyer);
-        sb.append(", dealDate=").append(dealDate);
-        sb.append(", deadLineDate=").append(deadLineDate);
-        sb.append('}');
-        return sb.toString();
     }
 }

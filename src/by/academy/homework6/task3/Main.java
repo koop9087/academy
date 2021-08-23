@@ -1,6 +1,6 @@
 package by.academy.homework6.task3;
 
-import by.academy.homework6.task3.Service.MyIterator;
+import by.academy.homework6.task3.service.MyIterator;
 
 import java.util.Iterator;
 
