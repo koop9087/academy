@@ -1,24 +1,0 @@
-
-W
-java:S1118":Add a private constructor to hide the implicit public one.(Èù™8–½Ô¬«/
-Q
-java:S6212	"/Declare this local variable with "var" instead.(ÆØÃıÿÿÿÿ8œ½Ô¬«/
-L
-java:S6212"/Declare this local variable with "var" instead.(İóÅœ8½Ô¬«/
-L
-java:S6212"/Declare this local variable with "var" instead.(ÎÂ²¸8½Ô¬«/
-Q
-java:S6212"/Declare this local variable with "var" instead.(§˜õùøÿÿÿÿ8½Ô¬«/
-Z
-java:S1197"8Move the array designator from the variable to the type.(§˜õùøÿÿÿÿ8Ÿ½Ô¬«/
-L
-java:S6212"/Declare this local variable with "var" instead.(»”›Ù8Ÿ½Ô¬«/
-Q
-java:S6212"/Declare this local variable with "var" instead.(İ³ÛÔûÿÿÿÿ8 ½Ô¬«/
-L
-java:S6212"/Declare this local variable with "var" instead.(ÕèñÑ8¡½Ô¬«/
-L
-java:S6212*"/Declare this local variable with "var" instead.(ìüà·8£½Ô¬«/
-L
-java:S6212,"/Declare this local variable with "var" instead.(»”›Ù8£½Ô¬«/
-U	java:S1066"9Replace this use of System.out or System.err by a logger.(¤êà8¤½Ô¬«/
