@@ -1,15 +1,0 @@
-
-\
-java:S1118":Add a private constructor to hide the implicit public one.(¼Ö òıÿÿÿÿ8ß¿Ó¬«/
-L
-java:S6212
-"/Declare this local variable with "var" instead.(¢³¯¯8ä¿Ó¬«/
-Q
-java:S6212"/Declare this local variable with "var" instead.(öó©úÿÿÿÿ8æ¿Ó¬«/
-L
-java:S6212"/Declare this local variable with "var" instead.(Ã½¬ë8æ¿Ó¬«/
-L
-java:S6212"/Declare this local variable with "var" instead.(Ÿ“›ì8ç¿Ó¬«/
-Q
-java:S6212"/Declare this local variable with "var" instead.(£¿îğÿÿÿÿÿ8è¿Ó¬«/
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ƒÒÍ«8é¿Ó¬«/

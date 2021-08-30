@@ -1,7 +1,0 @@
-
-N	java:S106("9Replace this use of System.out or System.err by a logger.(Õç…ì
-M	java:S106,"9Replace this use of System.out or System.err by a logger.(¦ûÙ
-J
-java:S6212:"/Declare this local variable with "var" instead.(÷è´³øÿÿÿÿ
-J
-java:S6212c"/Declare this local variable with "var" instead.(‚‘¼ùþÿÿÿÿ
