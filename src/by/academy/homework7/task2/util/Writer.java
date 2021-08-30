@@ -10,11 +10,9 @@ import java.nio.charset.StandardCharsets;
 
 public class Writer {
     public static final String SOURCE_PATH_NAME = "src\\io\\homework7\\task2\\text.txt";
-    private Creator creator = new Creator();
-    private Replacer replacer = new Replacer();
 
     public void write() {               //в этом методе мы просто копируем содержимое из text в result
-        creator.createFile();
+        new Creator().createFile();
         try (FileOutputStream fileOutputStream = new FileOutputStream(Creator.FILE_PATH);
              FileInputStream fileInputStream = new FileInputStream(SOURCE_PATH_NAME)) {
             int a;
@@ -27,7 +25,7 @@ public class Writer {
     }
 
     public void writeNewFile() {      //в этом методе мы перезаписываем наш текст, но уже без пробелов
-        String line = replacer.replace();
+        String line = new Replacer().replace();
         byte[] b = line.getBytes(StandardCharsets.UTF_8);
         try (FileOutputStream fileOutputStream = new FileOutputStream(Creator.FILE_PATH)) {
             fileOutputStream.write(b);

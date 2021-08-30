@@ -9,11 +9,9 @@ import java.io.ObjectOutputStream;
 import java.util.List;
 
 public class Serialize {
-    private final Pattern pattern = new Pattern();
-
     public void serialize(List<User> array) {
         for (int i = 0; i < array.size(); i++) {
-            try (BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(pattern.getPatternFile(array, i)))) {
+            try (BufferedOutputStream outputStream = new BufferedOutputStream(new FileOutputStream(new Pattern().getPatternFile(array, i)))) {
                 ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
                 objectOutputStream.writeObject(array.get(i));
             } catch (IOException e) {

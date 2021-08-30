@@ -8,7 +8,6 @@ import java.io.IOException;
 import java.util.List;
 
 public class Creator {
-    private final Pattern patternFile = new Pattern();
 
     public void createDirectory() {
         File file = new File(Pattern.FILE_PATH);
@@ -19,7 +18,7 @@ public class Creator {
 
     public void createFiles(List<User> arrayList) {
         for (int i = 0; i < arrayList.size(); i++) {
-            File file = new File(patternFile.getPatternFile(arrayList, i));
+            File file = new File(new Pattern().getPatternFile(arrayList, i));
             try {
                 if (!file.exists()) {
                     file.createNewFile();
